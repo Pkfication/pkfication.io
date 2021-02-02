@@ -2,11 +2,17 @@ import Head from 'next/head'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import Prism from "Prismjs"
+import { useEffect } from 'react'
 
 const name = 'Noob Dev'
 export const siteTitle = 'Pkfication.io'
 
 export default function Layout({ children, home }) {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
